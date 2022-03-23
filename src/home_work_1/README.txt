@@ -9,4 +9,4 @@
 5.2 - UserNameIfElseIf
 5.3 - UserNameSwitch
 6 - PhoneNumber
-7 - BinaryNumbersArray, BinaryNumbersArrayList (вместо обычного массива в решении используется ArrayList)
+7 - BinaryNumbersArray, BinaryNumbersArrayListInteractively (вместо обычного массива в решении используется ArrayList, а также осуществляется ввод с клавиатуры)
