@@ -5,14 +5,13 @@ import static java.lang.Math.*;
 
 public class MathMethods {
     public static void main(String[] args) {
-        int userNumber1 = 0, userNumber2 = 0;
+
         // Осуществляется и обрабатывается ввод чисел с клавиатуры
-        System.out.println("Введите два числа через пробел:");
+        System.out.println("Введите первое число");
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        String[] parts = userInput.split(" ");
-        userNumber1 = Integer.parseInt(parts[0]);
-        userNumber2 = Integer.parseInt(parts[1]);
+        int userNumber1 = scanner.nextInt();
+        System.out.println("Введите второе число");
+        int userNumber2 = scanner.nextInt();
 
         // вычисляется сумма двух чисел и выводится в консоль
         int sum = addExact(userNumber1, userNumber2);
