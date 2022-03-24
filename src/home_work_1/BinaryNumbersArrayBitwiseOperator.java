@@ -1,8 +1,8 @@
 package home_work_1;
 
-public class BinaryNumbersArray {
+public class BinaryNumbersArrayBitwiseOperator {
     public static void main(String[] args) {
-        byte userNumber = -42;
+        byte userNumber = -15;
         // вызов функции и присваивание возвращаемого значения
         String binaryNumber = toBinaryString(userNumber);
         System.out.println(binaryNumber); // вывод результата в консоль
@@ -11,14 +11,14 @@ public class BinaryNumbersArray {
     public static String toBinaryString (byte number) {
         byte numberPositive;
 
-        // преобразование отрицательного числа при вводе в положительное
-        if(number < 0 && number !=-128) {
-            numberPositive = (byte) -number;
-        } else if(number == -128) { // отдельное условие для обработки -128 (костыль, да)
-            numberPositive = 127;
+        // применение побитового оператора NOT для отрицательного числа (по сути, прибавление 1 к отрциательному числу
+        // и перевод его в положительное число
+        if(number < 0) {
+            numberPositive = (byte) ~number;
         } else {
             numberPositive = number;
         }
+
 
         // положительное число делится 8 раз на 2, остаток добавляется в массив чисел
         // это первый этап преобразования числа из десятичной системы в двоичную
@@ -31,24 +31,12 @@ public class BinaryNumbersArray {
             numbers[i] = remainder;
         }
 
-        // дополнительный код для отрицательных чисел
+        // инвертирование массива чисел для обработки исходных отрицательных чисел
         if(number < 0) {
             for (int i = numbers.length -1; i >= 0; i--) {
                 byte invertedNumber = (byte) ((numbers[i] == 1) ? 0 : 1);
-                numbers[i] = invertedNumber; // на выходе из цикла получается массив интвертированных чисел
-            }
-            // цикл для добавления 1 к интвертированному числу для отрицательных чисел >-128
-            if(number !=-128) {
-                boolean continueCycle = true;
-                int index = 0;
-                while (continueCycle) {
-                    int currentNumber = numbers[index];
-                    numbers[index] = (byte) (currentNumber == 0 ? 1 : 0);
-                    if (currentNumber == 0) {
-                        continueCycle = false;
-                    }
-                    index++;
-                }
+                numbers[i] = invertedNumber; // на выходе из цикла получается массив интвертированных чисел, к которым
+                // ранее была прибавлена 1
             }
         }
         // проход массива с конца и добавление каждого числа в строку, чтобы в итоге получить двоичное представление

@@ -9,4 +9,6 @@
 5.2 - UserNameIfElseIf
 5.3 - UserNameSwitch
 6 - PhoneNumber
-7 - BinaryNumbersArray, BinaryNumbersArrayListInteractively (вместо обычного массива в решении используется ArrayList, а также осуществляется ввод с клавиатуры)
+7 - BinaryNumbersArray - добавление 1 для обработки отрицательных чисел происходит при помощи цикла, есть один костыль
+BinaryNumbersArrayListInteractively - вместо обычного массива в решении используется ArrayList, а также осуществляется ввод с клавиатуры
+BinaryNumbersArrayBitwiseOperator - добавление 1 происходит при использовании побитового оператора NOT, вариант без костыля

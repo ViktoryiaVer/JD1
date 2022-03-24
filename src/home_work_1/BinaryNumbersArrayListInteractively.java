@@ -26,10 +26,10 @@ public class BinaryNumbersArrayListInteractively {
             numberPositive = number;
         }
 
-        StringBuilder sb = new StringBuilder();  // создание нового объекта класса StringBuilder
         ArrayList <Byte> numbers = new ArrayList<>(); // создание нового объекта класса ArrayList
 
         // положительное число делится 8 раз на 2, остаток добавляется в массив чисел
+        // это первый этап преобразования числа из десятичной системы в двоичную
         for (int i = 0; i < 8; i++) {
             byte remainder;
             remainder = (byte) (numberPositive % 2);
@@ -58,10 +58,11 @@ public class BinaryNumbersArrayListInteractively {
             }
         }
         // проход массива с конца и добавление каждого числа в строку, чтобы в итоге получить двоичное представление
-        // исходного числа
+        // исходного числа. это второй этап преобразования
+        StringBuilder sb = new StringBuilder();  // создание нового объекта класса StringBuilder
         for (int i = 7; i >= 0; i--) {
             sb.append((numbers.get(i)));
         }
-        return String.valueOf(sb); // возвращение строкового значения класса StringBuilder
+        return String.valueOf(sb); // возвращение строкового значения класса StringBuilder - двоичного представления исходного числа
     }
 }
