@@ -24,6 +24,7 @@ public class UserNameSwitch {
             }
             default : {
                 System.out.println("Добрый день, а Вы кто?");
+                break;
             }
         }
     }
