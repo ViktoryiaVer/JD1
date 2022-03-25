@@ -13,10 +13,10 @@ public class SleepInteractively {
         String userInput2 = scanner.nextLine();
 
         // интерпретация ввода с клавиатуры
-        boolean isWorkday = "да".equals(userInput1);
-        boolean isHoliday = "да".equals(userInput2);
-        boolean isValidAnswer1 = "да".equals(userInput1) || "нет".equals(userInput1);
-        boolean isValidAnswer2 = "да".equals(userInput2) || "нет".equals(userInput2);
+        boolean isWorkday = "да".equalsIgnoreCase(userInput1);
+        boolean isHoliday = "да".equalsIgnoreCase(userInput2);
+        boolean isValidAnswer1 = "да".equalsIgnoreCase(userInput1) || "нет".equalsIgnoreCase(userInput1);
+        boolean isValidAnswer2 = "да".equalsIgnoreCase(userInput2) || "нет".equalsIgnoreCase(userInput2);
 
         // обработка некорректных или нелогичных ответов
         if((isWorkday && isHoliday) || (!isWorkday && !isHoliday) || (!isValidAnswer1 || !isValidAnswer2)) {
