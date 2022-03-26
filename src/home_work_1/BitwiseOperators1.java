@@ -30,7 +30,6 @@ public class BitwiseOperators1 {
 
         // Используется сдвиг влево
         int l = 42 << 15; // 42 = 00101010; 15 = 00001111; l = 101010000000000000000;
-        System.out.println(Integer.toBinaryString(l));
         System.out.println("42 << 15 = " +l);
     }
 }
