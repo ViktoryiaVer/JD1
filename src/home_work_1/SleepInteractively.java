@@ -27,7 +27,7 @@ public class SleepInteractively {
             boolean isSleepPossible = sleepIn(isWorkday, isHoliday);
             // интерпретация возвращаемого значения метода
             if(isSleepPossible) {
-                System.out.println("Да, можно еше и поспать!");
+                System.out.println("Да, можно еще и поспать!");
             } else {
                 System.out.println("Ну нет, спать нельзя, пора на работу!");
             }

@@ -5,11 +5,11 @@ public class Sleep {
         boolean isWorkday = false;
         boolean isHoliday = true;
 
-        System.out.println("Можно ли мне еще поспать?");
+        System.out.println("Можно ли Вам еще поспать?");
 
         // обработка нелогичных ответов
         if(isWorkday && isHoliday || !isWorkday && !isHoliday){
-            System.out.println("Что-то ответы у тебя непонятные. Идите отдохните и вернитесь позже!");
+            System.out.println("Что-то ответы у Вас непонятные. Идите отдохните и вернитесь позже!");
         }
         else {
             // вызов метода sleepIn и присваивание возвращаемоего значения
@@ -17,7 +17,7 @@ public class Sleep {
 
             // интерпретация значения метода
             if(isSleepPossible) {
-                System.out.println("Да, можно еше и поспать!");
+                System.out.println("Да, можно еще и поспать!");
             } else {
                 System.out.println("Ну нет, спать нельзя, пора на работу!");
             }
