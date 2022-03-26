@@ -21,21 +21,16 @@ public class BitwiseOperators1 {
         System.out.println("~15 = " + g);
 
         // Используется сдвиг вправо
-        int h = 42 >> 2; // 42 = 00101010; h = 00001010;
-        System.out.println("42 >> 2 = " +h);
-        int i = 15 >>2; // 15 = 00001111; i = 00000011;
-        System.out.println("15 >> 2 = " +i);
+        int h = 42 >> 15; // 42 = 00101010; 15 = 00001111; h = 00000000;
+        System.out.println("42 >> 15 = " +h);
 
         // Используется сдвиг вправо с заполнением нулями
-        int j = 42 >>> 2; // 42 = 00101010; j = 00001010;
-        System.out.println("42 >>> 2 = " + j);
-        int k = 15 >>2; // 15 = 00001111; k = 00000011;
-        System.out.println("15 >>> 2 = " + k);
+        int j = 42 >>> 15; // 42 = 00101010; 15 = 00001111; j = 00000000;
+        System.out.println("42 >>> 15 = " + j);
 
         // Используется сдвиг влево
-        int l = 42 << 2; // 42 = 00101010; l = 10101000;
-        System.out.println("42 << 2 = " +l);
-        int m = 15 << 2; // 15 = 00001111; m = 00111100;
-        System.out.println("15 << 2 = " + m);
+        int l = 42 << 15; // 42 = 00101010; 15 = 00001111; l = 101010000000000000000;
+        System.out.println(Integer.toBinaryString(l));
+        System.out.println("42 << 15 = " +l);
     }
 }
