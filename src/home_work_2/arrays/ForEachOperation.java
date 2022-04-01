@@ -2,7 +2,7 @@ package home_work_2.arrays;
 /**
  * класс для реализации интерфейса ArraysOperation при помощи for each
  */
-public class ForEachOperation implements ArraysOperation {
+public class ForEachOperation implements IArraysOperation {
     @Override
     public void printAllArrayElements(int[] arr) {
         System.out.println("Вывод всех элементов массива при помощи for each:");

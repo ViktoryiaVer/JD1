@@ -3,7 +3,7 @@ package home_work_2.arrays;
 /**
  * класс для реализации интерфейса ArraysOperation при помощи do...while
  */
-public class DoWhileOperation implements ArraysOperation {
+public class DoWhileOperation implements IArraysOperation {
 
     @Override
     public void printAllArrayElements(int[] arr) {

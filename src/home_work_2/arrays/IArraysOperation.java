@@ -2,7 +2,7 @@ package home_work_2.arrays;
 /**
  * интерфейс для работы с методами печати массивов - задание 2.3
  */
-public interface ArraysOperation {
+public interface IArraysOperation {
 
     /**
      * печатает все элементы массива

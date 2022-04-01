@@ -5,7 +5,7 @@ import home_work_2.utils.ArraysUtils;
 /**
  * класс для работы с различными реализациями интерфейса ArraysOperation
  */
-public class MainForInterfaces {
+public class MainForInterface {
     public static void main(String[] args) {
         int[] container = ArraysUtils.arrayFromConsole(); // получение массива с консоли
 
