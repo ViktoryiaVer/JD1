@@ -9,7 +9,7 @@ public class BinaryNumbersArrayListInteractively {
         System.out.println("Введите число для преобразование в восьмибитовое двоичное число");
         Scanner scanner = new Scanner(System.in);
         byte userNumber = scanner.nextByte();
-        // вызов функции и присваивание возвращаемого значения
+        // вызов метода и присваивание возвращаемого значения
         String binaryNumber = toBinaryString(userNumber);
         System.out.println(binaryNumber); // вывод результата в консоль
     }

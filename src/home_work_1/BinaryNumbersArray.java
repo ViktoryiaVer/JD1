@@ -3,7 +3,7 @@ package home_work_1;
 public class BinaryNumbersArray {
     public static void main(String[] args) {
         byte userNumber = -42;
-        // вызов функции и присваивание возвращаемого значения
+        // вызов метода и присваивание возвращаемого значения
         String binaryNumber = toBinaryString(userNumber);
         System.out.println(binaryNumber); // вывод результата в консоль
     }

@@ -3,7 +3,7 @@ package home_work_1;
 public class BinaryNumbersArrayBitwiseOperator {
     public static void main(String[] args) {
         byte userNumber = -15;
-        // вызов функции и присваивание возвращаемого значения
+        // вызов метода и присваивание возвращаемого значения
         String binaryNumber = toBinaryString(userNumber);
         System.out.println(binaryNumber); // вывод результата в консоль
     }
