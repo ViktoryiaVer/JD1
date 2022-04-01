@@ -111,11 +111,10 @@ public class ArraysIteration {
         }
         System.out.println();
         System.out.println("Вывод всех элементов массива в обратном порядке при помощи for each:");
-        StringBuilder b = new StringBuilder();
-        for (int n: arr){
-            b.append("\t ").append(n);
+        for (int number: arr){
+            System.out.printf("%-5d", number);
         }
-        System.out.println(b.reverse());
+        System.out.println();
     }
 
 

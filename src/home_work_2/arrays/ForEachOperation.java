@@ -28,9 +28,8 @@ public class ForEachOperation implements IArraysOperation {
     @Override
     public void printElementsInReversedOrder(int[] arr) {
         System.out.println("Вывод всех элементов массива в обратном порядке при помощи for each:");
-        StringBuilder b = new StringBuilder();
-        for (int n: arr){
-            b.append(n).append(" ");
+        for (int number: arr){
+            System.out.printf("%-5d", number);
         }
         System.out.println();
     }
