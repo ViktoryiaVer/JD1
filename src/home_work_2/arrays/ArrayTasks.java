@@ -2,6 +2,7 @@ package home_work_2.arrays;
 
 import home_work_2.utils.ArraysUtils;
 
+
 /**
  * класс с методами для решения различных задач по массивам - задание 2.4
  */
@@ -19,8 +20,12 @@ public class ArrayTasks {
         System.out.println("Максимальный из элементов массива с четными индексами = " + maxValue);
 
         // вызов метода для получения всех элементов массива меньше средного арифметического и печать результата
-        String nUnderAverage = calculateAverageReturnAllSmaller(arr);
-        System.out.println("Все элементы массива меньше среднего арифметического:\n" +nUnderAverage);
+        int [] underAverageElements = calculateAverageReturnAllSmaller(arr);
+        System.out.println("Все элементы массива меньше среднего арифметического:");
+        for(int number : underAverageElements) {
+            System.out.printf("%-5d", number);
+        }
+        System.out.println();
 
         // вызов метода для получения двух минимальных элементов массива и печать результата
         MinElements minTwoEl = findTwoMinElements(arr);
@@ -74,28 +79,36 @@ public class ArrayTasks {
     /**
      * высчитывает среднее арифметическое для элементов массива и возвращает элементы меньше него
      * @param arr массив чисел, для которого нужно вернуть элементы меньше средного арифметического
-     * @return элементы массива ниже среднего арифметического в виде строки
+     * @return элементы массива ниже среднего арифметического в виде массива чисел
      */
 
-    public static String calculateAverageReturnAllSmaller (int [] arr) {
+    public static int[] calculateAverageReturnAllSmaller (int [] arr) {
         float sum = 0;
         for(int number : arr) {
             sum += number;
         }
         float average = sum / arr.length;
-        StringBuilder underAverageAsString = new StringBuilder();
-        for(int i = 0; i < arr.length; i++) {
-            if(arr[i] < average) {
-                underAverageAsString.append(String.format("%-5d", arr[i]));
+        int underAverageAmount = 0;
+        for (int number : arr) {
+            if(number < average) {
+                underAverageAmount++;
             }
         }
-        return underAverageAsString.toString();
+        int[] underAverageAsArray = new int [underAverageAmount];
+        int underAverageCount = 0;
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] < average) {
+                underAverageAsArray[underAverageCount] = arr[i];
+                underAverageCount++;
+            }
+        }
+        return underAverageAsArray;
     }
 
     /**
      * находит два элемента с минимальным значением в массиве
      * @param array массив, для которого нужно найти два минимальные элемента
-     * @return массив из 2 минимальных чисел массива, переданного в метод
+     * @return 2 минимальных элемента в виде объекта класса MinElements
      */
     public static MinElements findTwoMinElements (int [] array) {
         int min1 = array[0] < array[1] ? array[0] : array[1];
