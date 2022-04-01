@@ -9,6 +9,6 @@
 2.2 - home_work_2/arrays/ArraysIteration
 2.3 - home_work_2/arrays/IArraysOperation - интерфейс, DoWhileOperation, WhileOperation, ForOperation, ForEachOperation - реализации интерфейса, MainForInterfaces - здесь вызываются различные реализации интерфейса
 2.4 - home_work_2/arrays/ArrayTasks - класс с методами, MinElements - класс для возврата значений из метода по нахождению минимальных элементов массива
-3 - home_work_2/bubblesort.drawio, home_work_2/bubblesort.svg
+3 - home_work_2/sorts/bubblesort.drawio, home_work_2/bubblesort.svg
 4.1 - home_work_2/utils/SortsUtils
 4.2 - home_work_2/sorts/SortsMain
