@@ -12,7 +12,7 @@ public class DoWhileOperation implements IArraysOperation {
         do {
             System.out.printf("%-5d", arr[i]);
             i++;
-        } while (i < arr.length);
+        } while(i < arr.length);
         System.out.println();
     }
 

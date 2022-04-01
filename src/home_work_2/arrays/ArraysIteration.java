@@ -23,22 +23,22 @@ public class ArraysIteration {
         do {
             System.out.printf("%-5d", arr[i]);
             i++;
-        } while (i < arr.length);
+        } while(i < arr.length);
         System.out.println();
         System.out.println("Вывод всех элементов массива при помщи while:");
         i = 0;
-        while (i < arr.length) {
+        while(i < arr.length) {
             System.out.printf("%-5d", arr[i]);
             i++;
         }
         System.out.println();
         System.out.println("Вывод всех элементов массива при помощи for:");
-        for (i = 0; i < arr.length; i++) {
+        for(i = 0; i < arr.length; i++) {
             System.out.printf("%-5d", arr[i]);
         }
         System.out.println();
         System.out.println("Вывод всех элементов массива при помощи for each:");
-        for (int number : arr) {
+        for(int number : arr) {
             System.out.printf("%-5d", number);
         }
         System.out.println();
@@ -69,7 +69,7 @@ public class ArraysIteration {
         }
         System.out.println();
         System.out.println("Вывод каждого второго элемента массива при помщи for:");
-        for (i = 0; i< arr.length; i++) {
+        for(i = 0; i< arr.length; i++) {
             if(i % 2 != 0) {
                 System.out.printf("%-5d", arr[i]);
             }
@@ -77,7 +77,7 @@ public class ArraysIteration {
         System.out.println();
         System.out.println("Вывод каждого второго элемента массива при помщи for each:");
         i = 0;
-        for (int number : arr) {
+        for(int number : arr) {
             if(i % 2 !=0) {
                 System.out.printf("%-5d", number);
             }
@@ -106,12 +106,12 @@ public class ArraysIteration {
         }
         System.out.println();
         System.out.println("Вывод всех элементов массива в обратном порядке при помощи for:");
-        for (i = arr.length - 1; i >= 0 ; i--) {
+        for(i = arr.length - 1; i >= 0 ; i--) {
             System.out.printf("%-5d", arr[i]);
         }
         System.out.println();
         System.out.println("Вывод всех элементов массива в обратном порядке при помощи for each:");
-        for (int number: arr){
+        for(int number: arr){
             System.out.printf("%-5d", number);
         }
         System.out.println();

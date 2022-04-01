@@ -17,8 +17,8 @@ public class SortsUtils {
      */
 
     public static void bubbleSort (int[] arr) {
-        for (int i = 0; i < arr.length-1; i++) {
-            for (int j = 0; j < arr.length -1 -i; j++) {
+        for(int i = 0; i < arr.length-1; i++) {
+            for(int j = 0; j < arr.length -1 -i; j++) {
                 if(arr[j] > arr[j+1]) {
                     int swap = arr[j];
                     arr[j] = arr[j+1];
@@ -42,7 +42,7 @@ public class SortsUtils {
         int left = 0;
         int right = arr.length - 1;
         boolean wasSwap = true;
-        while (left < right && wasSwap) {
+        while(left < right && wasSwap) {
             wasSwap = false;
             for(int i = left; i < right; i++) {
                 if(arr[i] > arr[i+1]) {

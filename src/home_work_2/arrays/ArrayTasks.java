@@ -32,7 +32,7 @@ public class ArrayTasks {
         // вызов метода для удаления элементов в определенном интервале и печать результата
         int [] arrAfterDeletion = deleteElementsInInterval(x, y, arr);
         System.out.println("Массив после удаления элементов в интервале от " + x + " до " + y + " :");
-        for (int number : arrAfterDeletion) {
+        for(int number : arrAfterDeletion) {
             System.out.printf("%-5d", number);
         }
         System.out.println();
@@ -49,7 +49,7 @@ public class ArrayTasks {
 
     public static int sumEvenPositiveElements (int [] array) {
         int sum = 0;
-        for (int element : array) {
+        for(int element : array) {
             if(element > 0 && element % 2 == 0) {
                 sum+=element;
             }
@@ -79,12 +79,12 @@ public class ArrayTasks {
 
     public static String calculateAverageReturnAllSmaller (int [] arr) {
         float sum = 0;
-        for (int number : arr) {
+        for(int number : arr) {
             sum += number;
         }
         float average = sum / arr.length;
         StringBuilder underAverageAsString = new StringBuilder();
-        for (int i = 0; i < arr.length; i++) {
+        for(int i = 0; i < arr.length; i++) {
             if(arr[i] < average) {
                 underAverageAsString.append(String.format("%-5d", arr[i]));
             }
@@ -101,7 +101,7 @@ public class ArrayTasks {
         int min1 = array[0] < array[1] ? array[0] : array[1];
         int min2 = min1 == array[0] ? array[1] : array[0];
 
-        for (int i = 2; i < array.length; i++) {
+        for(int i = 2; i < array.length; i++) {
             int temp = min2;
             if(array[i] < min1) {
                 temp = min1;

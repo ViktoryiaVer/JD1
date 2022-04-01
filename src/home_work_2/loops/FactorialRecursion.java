@@ -39,7 +39,7 @@ public class FactorialRecursion {
      */
 
     public static long calculateFactorial (long x) {
-        if (x == 1) {
+        if(x == 1) {
             return 1;
         } else {
             return x * calculateFactorial(x-1);

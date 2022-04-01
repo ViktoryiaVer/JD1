@@ -36,7 +36,7 @@ public class ArraysUtils {
         int[] arr = new int [arrayLength];
 
         // цикл, проходящий по всему массиву и заполняющий его элементы значениями, введенными пользователем
-        for (int i = 0; i <arrayLength; i++) {
+        for(int i = 0; i <arrayLength; i++) {
             System.out.println("Введите число для элемента массива");
 
             // цикл, в котором проверяется корректность ввода первого числа, и который продолжается до тех пор, пока ввод не будет правильным
@@ -60,7 +60,7 @@ public class ArraysUtils {
         int [] array = new int[size];
         Random rand = new Random();
         // цикл, проходящий по всему массиву и заполняющий его элементы рандомными значениями
-        for (int i = 0; i <array.length; i++) {
+        for(int i = 0; i <array.length; i++) {
             array[i] = rand.nextInt(maxValueExclusion);
         }
         return array;

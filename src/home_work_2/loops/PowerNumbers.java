@@ -28,7 +28,7 @@ public class PowerNumbers {
 
         // цикл, в котором выполняется возведение первого числа в степень второго
         double powResult = 1;
-        for (int i = 1; i <= secondNumber; i++) {
+        for(int i = 1; i <= secondNumber; i++) {
             powResult *= firstNumber;
         }
         // печать результата в отформатированном виде

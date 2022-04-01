@@ -7,7 +7,7 @@ public class WhileOperation implements IArraysOperation {
     public void printAllArrayElements(int[] arr) {
         System.out.println("Вывод всех элементов массива при помщи while:");
         int i = 0;
-        while (i < arr.length) {
+        while(i < arr.length) {
             System.out.printf("%-5d", arr[i]);
             i++;
         }

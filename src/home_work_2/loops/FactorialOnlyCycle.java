@@ -20,17 +20,17 @@ public class FactorialOnlyCycle {
         } else {
 
             // последовательное умножение i на i++ до тех пор, пока i не станет больше введенного аргумента
-            for (int i = 1; i <= userNumber; i++) {
+            for(int i = 1; i <= userNumber; i++) {
                 factorial *= i;
 
                 // обработка переполнения типа long: когда происходит переполнение, изначально положительное число становится не положительным
-                if (factorial <= 0) {
+                if(factorial <= 0) {
                     System.out.println("Переполнение типа long.\nЧтобы избежать переполнения, передайте в консоль число <= 20");
                     isDataTypeOverFlowed = true;
                     break;
                 }
                 // запись хода решения в переменную String: * добавляется только тогда, когда цифра не последняя
-                if (i != userNumber) {
+                if(i != userNumber) {
                     resultString.append(i).append(" * ");
                 } else {
                     resultString.append(i);

@@ -9,11 +9,11 @@ import java.util.Arrays;
  */
 public class SortsMain {
     public static void main(String[] args) {
-        int [] test1 = new int[] {1,2,3,4,5,6};
-        int [] test2 = new int[] {1,1,1,1};
-        int [] test3 = new int[]{9,1,5,99,9,9};
-        int [] test4 = new int[] {};
-        int [] test5 = new int[]{6,5,4,3,2,1};
+        int [] test1 = {1,2,3,4,5,6};
+        int [] test2 = {1,1,1,1};
+        int [] test3 = {9,1,5,99,9,9};
+        int [] test4 = {};
+        int [] test5 = {6,5,4,3,2,1};
 
         // тесты сортировки предварительно созданных массивов
 

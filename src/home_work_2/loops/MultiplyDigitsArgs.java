@@ -18,13 +18,13 @@ public class MultiplyDigitsArgs {
             StringBuilder resultString = new StringBuilder();
 
             // цикл, в котором получаем первую цифру из строки и парсим ее в int и выполнением произведение
-            for (int i = 0; i < strLength; i++) {
+            for(int i = 0; i < strLength; i++) {
 
                 int digit = Integer.parseInt(String.valueOf(args[0].charAt(i)));
                 result *= digit;
 
                 // запись хода решения в переменную String: * добавляется только тогда, когда цифра не последняя
-                if (i != strLength - 1) {
+                if(i != strLength - 1) {
                     resultString.append(digit).append(" * ");
                 } else {
                     resultString.append(digit);
