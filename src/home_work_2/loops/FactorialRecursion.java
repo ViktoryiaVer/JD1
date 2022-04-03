@@ -5,31 +5,30 @@ package home_work_2.loops;
  */
 public class FactorialRecursion {
     public static void main(String[] args) {
+        String enteredData = args[0];
+        boolean isValidInput = FactorialOnlyCycle.hasSymbols(enteredData); // вызов метода для проверки на ввод не числа, дробного или отрицательного числа и возвращение значения
+
+        // обработка невалидного ввода
+        if(isValidInput) {
+            System.out.println("Проверьте ввод. Необходимо ввести целое положительное число.");
+            return;
+        }
+
         long userNumber = Long.parseLong(args[0]);
 
-        boolean isPositiveNumber = userNumber > 0; // булевая для проверки отрицательного числа или 0
-
-        long factorial;
-        String resultString;
-
-        // обработка ввода не положительного аргумента
-        if(!isPositiveNumber) {
-            System.out.println("Вы ввели не положительное число. Передайте в консоль положительное число.");
-        } else {
-            // вызов рекурсивной метода для вычисления факториала и передача возвращаемого значения
-            factorial = calculateFactorial(userNumber);
-
-            // обработка переполнения типа long: когда происходит переполнение, изначально положительное число становится не положительным
-            if(factorial <= 0) {
-                System.out.println("Переполнение типа long.\nЧтобы избежать переполнения, передайте в консоль число <= 20");
-            }
-
-            // печать итогового результата происходит только в том случае, если не было переполнения
-            else {
-                resultString = formatStringForShowingResult(userNumber); // вызов метода для форматирвоания строки и возврат значения
-                System.out.println(resultString + " = " + factorial); // вывод отформатированной строки вместе с результатом вычисления факториала
-            }
+        // обработка переполнения типа long
+        if(userNumber > 20) {
+            System.out.println("С таким числом будет переполнение типа long. Передайте в консоль число <= 20");
+            return;
         }
+
+        // вызов рекурсивной метода для вычисления факториала и передача возвращаемого значения
+        long factorial = calculateFactorialRecursive(userNumber);
+
+
+        // печать итогового результата происходит только в том случае, если не было переполнения
+        System.out.println(formatStringForResultRecursive(userNumber) + " = " + factorial); // вывод отформатированной строки вместе с результатом вычисления факториала
+
     }
 
     /**
@@ -38,11 +37,11 @@ public class FactorialRecursion {
      * @return число, которому равняется факториал переданного в методию числа
      */
 
-    public static long calculateFactorial (long x) {
+    public static long calculateFactorialRecursive (long x) {
         if(x == 1) {
             return 1;
         } else {
-            return x * calculateFactorial(x-1);
+            return x * calculateFactorialRecursive(x-1);
         }
 
     }
@@ -53,11 +52,11 @@ public class FactorialRecursion {
      * @return отформатированная строка вида x * x-1
      */
 
-    public static String formatStringForShowingResult (long x) {
+    public static String formatStringForResultRecursive(long x) {
         if("1".equals(String.valueOf(x))) {
             return "1";
         } else {
-            String result = x + " * " + formatStringForShowingResult(x-1);
+            String result = x + " * " + formatStringForResultRecursive(x-1);
             return result;
         }
 
