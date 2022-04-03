@@ -1,7 +1,7 @@
 package home_work_2.loops;
 
 /**
- * в классе содеожится рекурсивный метод для вычисления факториала: задание  1.2
+ * в классе содержится рекурсивный метод для вычисления факториала: задание  1.2
  */
 public class FactorialRecursion {
     public static void main(String[] args) {
@@ -43,7 +43,6 @@ public class FactorialRecursion {
         } else {
             return x * calculateFactorialRecursive(x-1);
         }
-
     }
 
     /**
@@ -59,6 +58,5 @@ public class FactorialRecursion {
             String result = x + " * " + formatStringForResultRecursive(x-1);
             return result;
         }
-
     }
 }
