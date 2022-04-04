@@ -22,11 +22,11 @@ public class FactorialRecursion {
             return;
         }
 
-        // вызов рекурсивной метода для вычисления факториала и передача возвращаемого значения
+        // вызов рекурсивного метода для вычисления факториала и передача возвращаемого значения
         long factorial = calculateFactorialRecursive(userNumber);
 
 
-        // печать итогового результата происходит только в том случае, если не было переполнения
+        // печать итогового результата вместе с вызовом метода для получения отформатированной строки
         System.out.println(formatStringForResultRecursive(userNumber) + " = " + factorial); // вывод отформатированной строки вместе с результатом вычисления факториала
 
     }
@@ -55,8 +55,7 @@ public class FactorialRecursion {
         if("1".equals(String.valueOf(x))) {
             return "1";
         } else {
-            String result = x + " * " + formatStringForResultRecursive(x-1);
-            return result;
+            return x + " * " + formatStringForResultRecursive(x-1);
         }
     }
 }

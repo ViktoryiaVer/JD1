@@ -29,7 +29,7 @@ public class ArrayTasks {
 
         // вызов метода для получения двух минимальных элементов массива и печать результата
         MinElements minTwoEl = findTwoMinElements(arr);
-        System.out.println("Два элемента с минимальным значением:\n" + minTwoEl.first + "\t" + minTwoEl.second);
+        System.out.println("Два элемента с минимальным значением:\n" + minTwoEl.getFirst() + "\t" + minTwoEl.getSecond());
 
         // создание переменных для задания интервала
         int x = 5;

@@ -23,11 +23,11 @@ public class TypeOverflow {
         //1.4.4
         System.out.println("Введите целое число для умножения до переполнения типа:");
         Scanner console = new Scanner(System.in);
-        while(!console.hasNextInt()) {
+        while(!console.hasNextLong()) {
             System.out.println("Введите целое число!");
-            console.next();
+            console.nextLong();
         }
-        b = console.nextInt();
+        b = console.nextLong();
         multiplyTillDataTypeOverflowPrintResults(a, b);
 
 
