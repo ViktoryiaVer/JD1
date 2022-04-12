@@ -13,7 +13,10 @@ public class CalculatorWithMemoryMain {
 
         calc12.addNumbers((calc12.addNumbers(4.1, calc12.multiplyNumbers(15d, 7d))),
                 (calc12.exponentiateNumbers(calc12.getModulusOfNumber(calc12.divideNumbers(28d, 5d)), 2)));
+        calc12.setLastOperationResult();
         System.out.println(calc12.getLastOperationResult());
-
+        System.out.println(calc12.getLastOperationResult());
+        calc12.setLastOperationResult();
+        System.out.println(calc12.getLastOperationResult());
     }
 }

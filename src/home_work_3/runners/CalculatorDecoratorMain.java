@@ -19,6 +19,7 @@ public class CalculatorDecoratorMain {
         if(calc13 instanceof CalculatorWithCounterAutoDecorator) {
             System.out.println("Количество использований калькулятора = " +((CalculatorWithCounterAutoDecorator) calc13).getCountOperation());
             if(((CalculatorWithCounterAutoDecorator) calc13).getCalculator() instanceof CalculatorWithMemoryDecorator) {
+                ((CalculatorWithMemoryDecorator) ((CalculatorWithCounterAutoDecorator) calc13).getCalculator()).setLastOperationResult();
                 System.out.println("Последнее сохраненное значение в памяти: " + ((CalculatorWithMemoryDecorator) ((CalculatorWithCounterAutoDecorator) calc13).getCalculator()).getLastOperationResult());
             }
 

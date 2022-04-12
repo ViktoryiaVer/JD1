@@ -20,7 +20,6 @@ public class CalculatorWithMemory {
      * @return результат последнего вычисления в виде double
      */
     public double getLastOperationResult() {
-        this.lastOperationResult = this.result;
         double temp = this.lastOperationResult;
         this.lastOperationResult = 0;
         this.result = 0;
