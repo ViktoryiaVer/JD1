@@ -15,8 +15,5 @@ public class CalculatorWithMemoryMain {
                 (calc12.exponentiateNumbers(calc12.getModulusOfNumber(calc12.divideNumbers(28d, 5d)), 2)));
         calc12.setLastOperationResult();
         System.out.println(calc12.getLastOperationResult());
-        System.out.println(calc12.getLastOperationResult());
-        calc12.setLastOperationResult();
-        System.out.println(calc12.getLastOperationResult());
     }
 }

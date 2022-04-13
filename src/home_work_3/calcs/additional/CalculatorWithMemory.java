@@ -22,7 +22,6 @@ public class CalculatorWithMemory {
     public double getLastOperationResult() {
         double temp = this.lastOperationResult;
         this.lastOperationResult = 0;
-        this.result = 0;
         return temp;
     }
 
