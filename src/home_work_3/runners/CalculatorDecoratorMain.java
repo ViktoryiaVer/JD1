@@ -17,10 +17,12 @@ public class CalculatorDecoratorMain {
         System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + resultDec);
 
         if(calc13 instanceof CalculatorWithCounterAutoDecorator) {
-            System.out.println("Количество использований калькулятора = " +((CalculatorWithCounterAutoDecorator) calc13).getCountOperation());
-            if(((CalculatorWithCounterAutoDecorator) calc13).getCalculator() instanceof CalculatorWithMemoryDecorator) {
-                ((CalculatorWithMemoryDecorator) ((CalculatorWithCounterAutoDecorator) calc13).getCalculator()).setLastOperationResult();
-                System.out.println("Последнее сохраненное значение в памяти: " + ((CalculatorWithMemoryDecorator) ((CalculatorWithCounterAutoDecorator) calc13).getCalculator()).getLastOperationResult());
+            CalculatorWithCounterAutoDecorator calcWithCount = (CalculatorWithCounterAutoDecorator) calc13;
+            System.out.println("Количество использований калькулятора = " +calcWithCount.getCountOperation());
+            if((calcWithCount.getCalculator()) instanceof CalculatorWithMemoryDecorator) {
+                CalculatorWithMemoryDecorator calcWithMemory = (CalculatorWithMemoryDecorator) calcWithCount.getCalculator();
+                calcWithMemory.setLastOperationResult();
+                System.out.println("Последнее сохраненное значение в памяти: " + calcWithMemory.getLastOperationResult());
             }
 
         }
