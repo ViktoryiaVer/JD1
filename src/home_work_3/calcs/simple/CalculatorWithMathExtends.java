@@ -3,10 +3,10 @@ package home_work_3.calcs.simple;
 import home_work_3.calcs.api.ICalculator;
 
 /**
- * класс, наследующий CalculatorWithMathCopy (задания 4.2-4.3)
+ * класс, наследующий CalculatorWithOperators (задания 4.2-4.3)
  */
 
-public class CalculatorWithMathExtends extends CalculatorWithMathCopy implements ICalculator {
+public class CalculatorWithMathExtends extends CalculatorWithOperator implements ICalculator {
     @Override
     /**
      * выполняет возведение числа в степень,
