@@ -109,19 +109,19 @@ public class CalculatorStringExpression {
 
         switch (str) {
             case "+":
-                result = calculator.addNumbers(a, b);
+                result = calculator.add(a, b);
                 break;
             case "-":
-                result = calculator.subtractNumbers(b, a);
+                result = calculator.subtract(b, a);
                 break;
             case "*":
-                result = calculator.multiplyNumbers(a, b);
+                result = calculator.multiply(a, b);
                 break;
             case "/":
-                result = calculator.divideNumbers(b, a);
+                result = calculator.divide(b, a);
                 break;
             case "^":
-                result = calculator.exponentiateNumbers(b, (int) a);
+                result = calculator.pow(b, (int) a);
                 break;
         }
         return result;

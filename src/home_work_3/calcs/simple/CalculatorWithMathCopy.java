@@ -10,65 +10,63 @@ public class CalculatorWithMathCopy implements ICalculator {
 
     /**
      * выполняет сложение чисел
-     * @param firstNumber первое слагаемое типа double
-     * @param secondNumber второе слагаемое типа double
+     * @param a первое слагаемое типа double
+     * @param b второе слагаемое типа double
      * @return сумму двух чисел в виде double
      */
-    public double addNumbers(double firstNumber, double secondNumber) {
-        return firstNumber + secondNumber;
+    public double add(double a, double b) {
+        return a + b;
     }
 
     /**
      * выполняет вычитание чисел
-     * @param firstNumber уменьшаемое типа double
-     * @param secondNumber вычитаемое типа double
+     * @param a уменьшаемое типа double
+     * @param b вычитаемое типа double
      * @return разность двух чисел в виде double
      */
-    public double subtractNumbers(double firstNumber, double secondNumber) {
-        return firstNumber - secondNumber;
+    public double subtract(double a, double b) {
+        return a - b;
     }
 
     /**
      * выполняет умножение чисел
-     * @param firstNumber первый множитель типа double
-     * @param secondNumber второй множитель типа double
+     * @param a первый множитель типа double
+     * @param b второй множитель типа double
      * @return произведение двух чисел в виде double
      */
-    public double multiplyNumbers(double firstNumber, double secondNumber) {
-        return firstNumber * secondNumber;
+    public double multiply(double a, double b) {
+        return a * b;
     }
 
     /**
      * выполняет деление чисел
-     * @param firstNumber делимое типа double
-     * @param secondNumber делитель типа double
+     * @param a делимое типа double
+     * @param b делитель типа double
      * @return результат деления в виде double
      */
-    public double divideNumbers(double firstNumber, double secondNumber) {
-        return firstNumber / secondNumber;
+    public double divide(double a, double b) {
+        return a / b;
     }
 
     /**
      * выполняет возведение числа в степень,
      * использует библиотеку класса Math
-     * @param firstNumber число типа double, которое нужно возвести в степень
-     * @param secondNumber степень типа int, в которую нужно возвести число
+     * @param a число типа double, которое нужно возвести в степень
+     * @param b степень типа int, в которую нужно возвести число
      * @return результат возведения в степень в виде double
      */
-    public double exponentiateNumbers(double firstNumber, int secondNumber) {
-        double powResult = Math.pow(firstNumber,secondNumber);
-        return powResult;
+    public double pow(double a, int b) {
+        return Math.pow(a,b);
     }
 
     /**
      * получает модуль числа,
      * использует библиотеку класса Math
-     * @param number число типа double, модуль которого необходимо  получить
+     * @param x число типа double, модуль которого необходимо  получить
      * @return модуль числа в виде double
      */
-    public double getModulusOfNumber(double number) {
-        double modulus = Math.abs(number);
-        return modulus;
+    public double abs(double x) {
+        return Math.abs(x);
     }
 
     /**
@@ -77,8 +75,7 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @param x число типа double, из которого нужно извлечь квадратный корень
      * @return результат извлечения квадратного корня в виде double
      */
-    public double calculateSqrt(double x) {
-        double sqrtResult = Math.sqrt(x);
-        return sqrtResult;
+    public double sqrt(double x) {
+        return Math.sqrt(x);
     }
 }

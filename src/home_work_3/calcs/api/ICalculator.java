@@ -5,12 +5,13 @@ package home_work_3.calcs.api;
  */
 public interface ICalculator {
 
-    double addNumbers(double firstNumber, double secondNumber);
-    double subtractNumbers(double firstNumber, double secondNumber);
-    double multiplyNumbers(double firstNumber, double secondNumber);
-    double divideNumbers(double firstNumber, double secondNumber);
-    double exponentiateNumbers(double firstNumber, int secondNumber);
-    double getModulusOfNumber(double number);
-    double calculateSqrt(double x);
+    double add(double a, double b);
+    double subtract(double a, double b);
+    double multiply(double a, double b);
+    double divide(double a, double b);
+
+    double pow(double a, int b);
+    double abs(double x);
+    double sqrt(double x);
 
 }

@@ -24,13 +24,4 @@ public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
         return countOperation;
     }
 
-    /**
-     * устанавливает количество использований калькулятора в виде long (сеттер для поля countOperation)
-     * @param countOperation число типа long, которое необходимо установить как количество использований
-     */
-    public void setCountOperation(long countOperation) {
-        this.countOperation = countOperation;
-    }
-
-
 }

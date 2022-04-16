@@ -7,10 +7,14 @@ import home_work_3.calcs.simple.CalculatorWithOperator;
  */
 public class CalculatorWithOperatorMain {
     public static void main(String[] args) {
-        CalculatorWithOperator calc1 = new CalculatorWithOperator();
+        CalculatorWithOperator calc = new CalculatorWithOperator();
 
-        double resultOperator  = calc1.addNumbers((calc1.addNumbers(4.1, calc1.multiplyNumbers(15, 7))),
-                (calc1.exponentiateNumbers(calc1.getModulusOfNumber(calc1.divideNumbers(28d, 5d)),2)));
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " +resultOperator);
+        double div = calc.divide(28, 5);
+        double pow = calc.pow(div, 2);
+        double multi = calc.multiply(15, 7);
+        double add = calc.add(pow, multi);
+        double result = calc.add(4.1, add);
+
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " +result);
     }
 }

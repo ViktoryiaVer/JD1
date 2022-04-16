@@ -34,123 +34,114 @@ public class CalculatorWithCounterAutoAgregation {
     /**
      * увеличивает значение счетчика использований оператора на 1
      */
-    public void incrementCountOperation() {
+    private void incrementCountOperation() {
         countOperation++;
-    }
-
-
-    /**
-     * устанавливает количество использований калькулятора в виде long (сеттер для поля countOperation)
-     * @param countOperation число типа long, которое необходимо установить как количество использований
-     */
-    public void setCountOperation(long countOperation) {
-        this.countOperation = countOperation;
     }
 
     /**
      * выполняет сложение чисел,
      * при вызове данного метода вызывается метод учета количества использований калькулятора
-     * @param firstNumber первое слагаемое типа double
-     * @param secondNumber второе слагаемое типа double
+     * @param a первое слагаемое типа double
+     * @param b второе слагаемое типа double
      * @return сумму двух чисел в виде double
      */
-    public double addNumbers(double firstNumber, double secondNumber) {
+    public double add(double a, double b) {
         incrementCountOperation();
         if(calc1 != null) {
-            return calc1.addNumbers(firstNumber, secondNumber);
+            return calc1.add(a, b);
         } else if(calc2 != null) {
-            return calc2.addNumbers(firstNumber, secondNumber);
+            return calc2.add(a, b);
         } else  {
-            return calc3.addNumbers(firstNumber, secondNumber);
+            return calc3.add(a, b);
         }
     }
 
     /**
      * выполняет вычитание чисел,
      * при вызове данного метода вызывается метод учета количества использований калькулятора
-     * @param firstNumber уменьшаемое типа double
-     * @param secondNumber вычитаемое типа double
+     * @param a уменьшаемое типа double
+     * @param b вычитаемое типа double
      * @return разность двух чисел в виде double
      */
-    public double subtractNumbers(double firstNumber, double secondNumber) {
+    public double subtract(double a, double b) {
         incrementCountOperation();
         if(calc1 != null) {
-            return calc1.subtractNumbers(firstNumber, secondNumber);
+            return calc1.subtract(a, b);
         } else if(calc2 != null) {
-            return calc2.subtractNumbers(firstNumber, secondNumber);
+            return calc2.subtract(a, b);
         } else  {
-            return calc3.subtractNumbers(firstNumber, secondNumber);
+            return calc3.subtract(a, b);
         }
     }
 
     /**
      * выполняет умножение чисел,
      * при вызове данного метода вызывается метод учета количества использований калькулятора
-     * @param firstNumber первый множитель типа double
-     * @param secondNumber второй множитель типа double
+     * @param a первый множитель типа double
+     * @param b второй множитель типа double
      * @return произведение двух чисел в виде double
      */
-    public double multiplyNumbers(double firstNumber, double secondNumber) {
+    public double multiply(double a, double b) {
         incrementCountOperation();
         if(calc1 != null) {
-            return calc1.multiplyNumbers(firstNumber, secondNumber);
+            return calc1.multiply(a, b);
         } else if(calc2 != null) {
-            return calc2.multiplyNumbers(firstNumber, secondNumber);
+            return calc2.multiply(a, b);
         } else  {
-            return calc3.multiplyNumbers(firstNumber, secondNumber);
+            return calc3.multiply(a, b);
         }
     }
 
     /**
      * выполняет деление чисел,
      * при вызове данного метода вызывается метод учета количества использований калькулятора
-     * @param firstNumber делимое типа double
-     * @param secondNumber делитель типа double
+     * @param a делимое типа double
+     * @param b делитель типа double
      * @return результат деления в виде double
      */
-    public double divideNumbers(double firstNumber, double secondNumber) {
+    public double divide(double a, double b) {
         incrementCountOperation();
         if(calc1 != null) {
-            return calc1.divideNumbers(firstNumber, secondNumber);
+            return calc1.divide(a, b);
         } else if(calc2 != null) {
-            return calc2.divideNumbers(firstNumber, secondNumber);
+            return calc2.divide(a, b);
         } else  {
-            return calc3.divideNumbers(firstNumber, secondNumber);
+            return calc3.divide(a, b);
         }
     }
 
     /**
      * выполняет возведение числа в степень,
      * при вызове данного метода вызывается метод учета количества использований калькулятора
-     * @param firstNumber число типа double, которое нужно возвести в степень
-     * @param secondNumber степень типа int, в которую нужно возвести число
+     * @param a число типа double, которое нужно возвести в степень
+     * @param b степень типа int, в которую нужно возвести число
      * @return результат возведения в степень в виде double
      */
-    public double exponentiateNumbers(double firstNumber, int secondNumber) {
+    public double pow(double a, int b) {
         incrementCountOperation();
         if (calc1 != null) {
-            return calc1.exponentiateNumbers(firstNumber, secondNumber);
+            return calc1.pow(a, b);
         } else if (calc2 != null) {
-            return calc2.exponentiateNumbers(firstNumber, secondNumber);
+            return calc2.pow(a, b);
         } else {
-            return calc3.exponentiateNumbers(firstNumber, secondNumber);
+            return calc3.pow(a, b);
         }
     }
 
     /**
      * получает модуль числа,
      * при вызове данного метода вызывается метод учета количества использований калькулятора
-     * @param number число типа double, модуль которого необходимо  получить
+     * @param x число типа double, модуль которого необходимо  получить
      * @return модуль числа в виде double
      */
-    public double getModulusOfNumber(double number) {
+    public double abs(double x) {
         incrementCountOperation();
         if (calc1 != null) {
-            return calc1.getModulusOfNumber(number);
+            return calc1.abs(x);
         } else if (calc2 != null) {
-            return calc2.getModulusOfNumber(number);
+            return calc2.abs(x);
         } else {
-            return calc3.getModulusOfNumber(number);
+            return calc3.abs(x);
         }
     }
 
@@ -160,14 +151,14 @@ public class CalculatorWithCounterAutoAgregation {
      * @param x число типа double, из которого нужно извлечь квадратный корень
      * @return результат извлечения квадратного корня в виде double
      */
-    public double calculateSqrt(double x) {
+    public double sqrt(double x) {
         incrementCountOperation();
         if (calc1 != null) {
-            return calc1.calculateSqrt(x);
+            return calc1.sqrt(x);
         } else if (calc2 != null) {
-            return calc2.calculateSqrt(x);
+            return calc2.sqrt(x);
         } else {
-            return calc3.calculateSqrt(x);
+            return calc3.sqrt(x);
         }
     }
 

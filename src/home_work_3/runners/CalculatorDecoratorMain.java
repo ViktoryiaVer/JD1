@@ -11,13 +11,18 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
 public class CalculatorDecoratorMain {
     public static void main(String[] args) {
-        ICalculator calc13 = new CalculatorWithCounterAutoDecorator(new CalculatorWithMemoryDecorator(new CalculatorWithMathExtends()));
-        double resultDec = calc13.addNumbers((calc13.addNumbers(4.1, calc13.multiplyNumbers(15d, 7d))),
-                (calc13.exponentiateNumbers(calc13.getModulusOfNumber(calc13.divideNumbers(28d, 5d)), 2)));
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + resultDec);
+        ICalculator calc = new CalculatorWithCounterAutoDecorator(new CalculatorWithMemoryDecorator(new CalculatorWithMathExtends()));
 
-        if(calc13 instanceof CalculatorWithCounterAutoDecorator) {
-            CalculatorWithCounterAutoDecorator calcWithCount = (CalculatorWithCounterAutoDecorator) calc13;
+        double div = calc.divide(28, 5);
+        double pow = calc.pow(div, 2);
+        double multi = calc.multiply(15, 7);
+        double add = calc.add(pow, multi);
+        double result = calc.add(4.1, add);
+
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+
+        if(calc instanceof CalculatorWithCounterAutoDecorator) {
+            CalculatorWithCounterAutoDecorator calcWithCount = (CalculatorWithCounterAutoDecorator) calc;
             System.out.println("Количество использований калькулятора = " +calcWithCount.getCountOperation());
             if((calcWithCount.getCalculator()) instanceof CalculatorWithMemoryDecorator) {
                 CalculatorWithMemoryDecorator calcWithMemory = (CalculatorWithMemoryDecorator) calcWithCount.getCalculator();

@@ -8,10 +8,14 @@ import home_work_3.calcs.simple.CalculatorWithMathCopy;
 
 public class CalculatorWithMathCopyMain {
     public static void main(String[] args) {
-        CalculatorWithMathCopy calc2 = new CalculatorWithMathCopy();
+        CalculatorWithMathCopy calc = new CalculatorWithMathCopy();
 
-        double resultMath  = calc2.addNumbers((calc2.addNumbers(4.1, calc2.multiplyNumbers(15d, 7d))),
-                (calc2.exponentiateNumbers(calc2.getModulusOfNumber(calc2.divideNumbers(28d, 5d)),2)));
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + resultMath);
+        double div = calc.divide(28, 5);
+        double pow = calc.pow(div, 2);
+        double multi = calc.multiply(15, 7);
+        double add = calc.add(pow, multi);
+        double result = calc.add(4.1, add);
+
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
     }
 }

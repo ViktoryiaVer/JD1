@@ -7,11 +7,15 @@ import home_work_3.calcs.additional.CalculatorWithCounterAutoSuper;
  */
 public class CalculatorWithCounterAutoSuperMain {
     public static void main(String[] args) {
-        CalculatorWithCounterAutoSuper calc5 = new CalculatorWithCounterAutoSuper();
+        CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
 
-        double resultMathExtend  = calc5.addNumbers((calc5.addNumbers(4.1, calc5.multiplyNumbers(15d, 7d))),
-                (calc5.exponentiateNumbers(calc5.getModulusOfNumber(calc5.divideNumbers(28d, 5d)),2)));
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + resultMathExtend);
-        System.out.println("Количество использований калькулятора = " + calc5.getCountOperation());
+        double div = calc.divide(28, 5);
+        double pow = calc.pow(div, 2);
+        double multi = calc.multiply(15, 7);
+        double add = calc.add(pow, multi);
+        double result = calc.add(4.1, add);
+
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.println("Количество использований калькулятора = " + calc.getCountOperation());
     }
 }

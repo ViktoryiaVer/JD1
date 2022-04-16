@@ -8,12 +8,20 @@ import home_work_3.calcs.simple.CalculatorWithMathCopy;
  */
 public class CalculatorWithMemoryMain {
     public static void main(String[] args) {
-        CalculatorWithMathCopy calc11 = new CalculatorWithMathCopy();
-        CalculatorWithMemory calc12 = new CalculatorWithMemory(calc11);
+        CalculatorWithMemory calc = new CalculatorWithMemory(new CalculatorWithMathCopy());
 
-        calc12.addNumbers((calc12.addNumbers(4.1, calc12.multiplyNumbers(15d, 7d))),
-                (calc12.exponentiateNumbers(calc12.getModulusOfNumber(calc12.divideNumbers(28d, 5d)), 2)));
-        calc12.setLastOperationResult();
-        System.out.println(calc12.getLastOperationResult());
+        calc.divide(28,5);
+        calc.setLastOperationResult();
+
+        calc.pow(calc.getLastOperationResult(), 2);
+        calc.setLastOperationResult();
+
+        calc.add(calc.multiply(15,7),calc.getLastOperationResult());
+        calc.setLastOperationResult();
+
+        calc.add(4.1, calc.getLastOperationResult());
+        calc.setLastOperationResult();
+
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + calc.getLastOperationResult());
     }
 }

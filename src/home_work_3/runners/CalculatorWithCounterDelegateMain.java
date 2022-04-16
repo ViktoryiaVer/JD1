@@ -2,7 +2,9 @@ package home_work_3.runners;
 
 import home_work_3.calcs.additional.CalculatorWithCounterAutoAgregation;
 import home_work_3.calcs.additional.CalculatorWithCounterAutoComposite;
+import home_work_3.calcs.simple.CalculatorWithMathCopy;
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
+import home_work_3.calcs.simple.CalculatorWithOperator;
 
 
 /**
@@ -10,19 +12,48 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
  */
 public class CalculatorWithCounterDelegateMain {
     public static void main(String[] args) {
-        CalculatorWithCounterAutoComposite calc6 = new CalculatorWithCounterAutoComposite();
+        CalculatorWithCounterAutoComposite calcComp = new CalculatorWithCounterAutoComposite();
 
-        double resultDelegate1 = calc6.addNumbers((calc6.addNumbers(4.1, calc6.multiplyNumbers(15d, 7d))),
-                (calc6.exponentiateNumbers(calc6.getModulusOfNumber(calc6.divideNumbers(28d, 5d)), 2)));
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + resultDelegate1);
-        System.out.println("Количество использований калькулятора = " + calc6.getCountOperation());
+        double div = calcComp.divide(28, 5);
+        double pow = calcComp.pow(div, 2);
+        double multi = calcComp.multiply(15, 7);
+        double add = calcComp.add(pow, multi);
+        double result = calcComp.add(4.1, add);
 
-        CalculatorWithMathExtends calc7 = new CalculatorWithMathExtends();
-        CalculatorWithCounterAutoAgregation calc8 = new CalculatorWithCounterAutoAgregation(calc7);
-        double resultDelegate2 = calc8.addNumbers((calc8.addNumbers(4.1, calc8.multiplyNumbers(15d, 7d))),
-                (calc8.exponentiateNumbers(calc8.getModulusOfNumber(calc8.divideNumbers(28d, 5d)), 2)));
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + resultDelegate2);
-        System.out.println("Количество использований калькулятора = " + calc8.getCountOperation());
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.println("Количество использований калькулятора = " + calcComp.getCountOperation());
+
+
+        CalculatorWithCounterAutoAgregation calcAgr1 = new CalculatorWithCounterAutoAgregation(new CalculatorWithOperator());
+        div = calcAgr1.divide(28, 5);
+        pow = calcAgr1.pow(div, 2);
+        multi = calcAgr1.multiply(15, 7);
+        add = calcAgr1.add(pow, multi);
+        result = calcAgr1.add(4.1, add);
+
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.println("Количество использований калькулятора = " + calcAgr1.getCountOperation());
+
+        CalculatorWithCounterAutoAgregation calcAgr2 = new CalculatorWithCounterAutoAgregation(new CalculatorWithMathCopy());
+        div = calcAgr2.divide(28, 5);
+        pow = calcAgr2.pow(div, 2);
+        multi = calcAgr2.multiply(15, 7);
+        add = calcAgr2.add(pow, multi);
+        result = calcAgr2.add(4.1, add);
+
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.println("Количество использований калькулятора = " + calcAgr2.getCountOperation());
+
+        CalculatorWithCounterAutoAgregation calcAgr3 = new CalculatorWithCounterAutoAgregation(new CalculatorWithMathExtends());
+        div = calcAgr3.divide(28, 5);
+        pow = calcAgr3.pow(div, 2);
+        multi = calcAgr3.multiply(15, 7);
+        add = calcAgr3.add(pow, multi);
+        result = calcAgr3.add(4.1, add);
+
+        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.println("Количество использований калькулятора = " + calcAgr3.getCountOperation());
+
     }
 
 }
