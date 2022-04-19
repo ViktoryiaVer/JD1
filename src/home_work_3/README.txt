@@ -13,5 +13,7 @@
 10 - home_work_3/calcs/additional/CalculatorWithMemory.java; home_work_3/runners/CalculatorWithMemoryMain.java
 11 - home_work_3/calcs/additional/CalculatorWithCounterAutoDecorator.java; CalculatorWithMemoryDecorator.java;
      home_work_3/runners/CalculatorDecoratorMain.java
-12 - попытка написать парсер: пока без модуля, констант и проверок на валидность:
-home_work_3/calcs/additional/CalculatorStringExpression.java, home_work_3/runners/CalculatorStringExpressionMain.java
+12 - 1) нормальный вариант на основе регулярных выражений (документация в процессе):
+    классы и интерфейсы в home_work_3/calcs/adapter, точка входа: home_work_3/runners/CalculatorWithAdapterMain.java
+    2) попытка написать парсер на основе ОПЗ: пока без модуля, констант и проверок на валидность:
+    home_work_3/calcs/additional/CalculatorStringExpression.java, home_work_3/runners/CalculatorStringExpressionMain.java
