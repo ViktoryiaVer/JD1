@@ -1,8 +1,12 @@
 package students;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -10,6 +14,8 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class RandomGenerator {
     private final ThreadLocalRandom random = ThreadLocalRandom.current();
+    private String[] namesStringArray = {"Петя", "Аня", "Вася", "Соня",
+            "Ира", "Паша", "Люся", "Катя", "Тимофей", "Илья", "Ярослав", "Маша",};
 
     /**
      * получает рандомное целое число от 7 до 17 включительно
@@ -23,7 +29,7 @@ public class RandomGenerator {
      * получает рандомное имя в виде набора символов русского алфавита
      * @return рандомное имя типа String
      */
-    public String generateRandomName() {
+    public String generateRandomSymbolsName() {
         int leftLimit = 1040; // буква А 1072, если только маленькие буквы
         int rightLimit = 1103; // буква Я
         int targetStringLength = random.nextInt(3,10);
@@ -37,17 +43,51 @@ public class RandomGenerator {
     }
 
     /**
-     * получает рандомное имя из предложенных нормальных имен в массиве
+     * получает рандомное имя из предложенных нормальных имен,
      * @return рандомное имя типа String
      */
     public String generateRandomNormalName() {
-        String[] names = {"Петя", "Аня", "Вася", "Соня",
-                "Ира", "Паша", "Люся", "Катя", "Тимофей", "Илья", "Ярослав", "Маша",};
+        return getRandomNameFromList(List.of(namesStringArray));
 
-        Random rnd = new Random();
-        List<String> freeNames = new ArrayList<>(List.of(names));
-        return freeNames.remove(rnd.nextInt(freeNames.size()));
+    }
 
+    /**
+     * генерирует рандомное имя, полученное из файла
+     * @param path путь к файлу
+     * @return имя типа String
+     */
+    public String generateRandomNameFromFile(String path) {
+        return getRandomNameFromList(getNamesFromFile(path));
+
+    }
+    /**
+     * получает рандомное имя из списка имен
+     * @param list список, из которого необходимо получить рандомное имя
+     * @return имя типа String
+     */
+    public String getRandomNameFromList(List<String> list) {
+        int size = list.size();
+        return list.get(random.nextInt(size));
+    }
+
+    /**
+     * читает файл и добавляет строки из него в список
+     * @param filePath путь к файлу, который необходимо прочитать
+     * @return список строк, находящихся в файле
+     */
+    public List<String> getNamesFromFile(String filePath) {
+        List<String> namesList = null;
+        try {
+            Charset charset = StandardCharsets.UTF_8;
+            namesList = new ArrayList<>(Files.readAllLines(Paths.get(filePath), charset));
+        }
+        catch(IOException e) {
+            System.out.println("Произошла ошибка!");
+        }
+        if(namesList != null) {
+            return namesList;
+        }
+        return null;
     }
 
     /**
@@ -65,6 +105,5 @@ public class RandomGenerator {
     public boolean generateRandomPart() {
         return random.nextBoolean();
     }
-
 }
 

@@ -16,11 +16,12 @@ public class StudentService {
      */
     public List<Student> createRandomStudentList(int amount) {
         List<Student> students = new ArrayList<>();
+        String path = "D:\\Computer Science\\Java_Basics\\JD1\\HomeWork\\src\\students\\names.txt";
         RandomGenerator random = new RandomGenerator();
 
         for (int i = 0; i < amount; i++) {
             int number = i+1;
-            students.add(new Student(number, random.generateRandomName(), random.generateRandomAge(),
+            students.add(new Student(number, random.generateRandomNameFromFile(path), random.generateRandomAge(),
                     random.generateRandomMark(), random.generateRandomPart()));
         }
         return students;
