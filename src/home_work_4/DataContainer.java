@@ -191,7 +191,7 @@ public class DataContainer <T> implements Iterable<T>{
     }
 
     /**
-     * внутренний класс с реализацией интерфейса Iterator для итерации по элементам типа T
+     * внутренний класс с реализацией интерфейса Iterator для итерирования элементам типа T
      */
     class DataContainerIterator implements Iterator<T>{
         T current;

@@ -58,7 +58,5 @@ public class DataContainerMain {
         for(String s : container) {
             System.out.println(s);
         }
-
-
     }
 }
