@@ -7,6 +7,9 @@ import home_work_3.calcs.api.ICalculator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Класс обработки математических выражений в виде строки для нахождения модуля числа
+ */
 public class AbsHandler implements IHandler {
     private final ICalculator calculator;
     public static final String ABS_PATTERN = "\\|";
@@ -18,7 +21,13 @@ public class AbsHandler implements IHandler {
         this.calculator = calculator;
     }
 
-
+    /**
+     * обрабатывает и вызывает методы для подсчета математического выражения в виде String,
+     * находит в строке модуль,
+     * создает новый объект адаптера, чтобы обработать и посчитать выражения внутри модуля
+     * @param str строка, которую необходимо обработать
+     * @return результат модуля числа в виде String
+     */
     @Override
     public String handle(String str) {
         boolean isMatch;
@@ -38,6 +47,10 @@ public class AbsHandler implements IHandler {
         return str;
     }
 
+    /**
+     * получает приоритет операции
+     * @return приоритет операции типа int
+     */
     @Override
     public int getPriority() {
         return this.priority;

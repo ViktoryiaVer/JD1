@@ -5,6 +5,9 @@ import home_work_3.calcs.adapter.handlers.api.IHandler;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * абстрактный класс для обработки математических выражений типа String
+ */
 public abstract class PatternHandler implements IHandler {
 
     public static final String NUMBER_PATTERN = "(-?\\d+(\\.\\d+){0,1})";
@@ -15,7 +18,11 @@ public abstract class PatternHandler implements IHandler {
     }
 
 
-
+    /**
+     * обрабатывает и вызывает методы для подсчета математического выражения в виде String,
+     * @param str строка, которую необходимо обработать
+     * @return результат вычисления в виде String
+     */
     @Override
     public final String handle(String str) {
         boolean isMatch;
@@ -31,5 +38,11 @@ public abstract class PatternHandler implements IHandler {
         } while(isMatch);
         return str;
     }
+
+    /**
+     * абстрактный метод для подсчета математических выражений
+     * @param matcher результат согласования регулярного выражения из строки
+     * @return результат вычисления выражения
+     */
     protected abstract double calculate(Matcher matcher);
 }
