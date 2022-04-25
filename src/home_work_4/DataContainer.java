@@ -125,10 +125,8 @@ public class DataContainer <T> implements Iterable<T>{
      */
     @Override
     public String toString() {
-        return "DataContainer{" +
-                "data=" + Arrays.toString(data).replaceAll(", *null *","")
-                .replaceAll(" *null, *", "") +
-                '}';
+        return Arrays.toString(data).replaceAll(", *null *","")
+                .replaceAll(" *null, *", "");
     }
 
     /**
@@ -157,7 +155,6 @@ public class DataContainer <T> implements Iterable<T>{
                 break;
             }
         }
-        System.out.println(container);
     }
 
     /**
@@ -181,7 +178,6 @@ public class DataContainer <T> implements Iterable<T>{
                 break;
             }
         }
-        System.out.println(container);
     }
 
     @NotNull
