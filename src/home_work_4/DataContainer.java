@@ -99,7 +99,7 @@ public class DataContainer <T> implements Iterable<T>{
     }
 
     /**
-     * сортирует данные в поле data, используя реализацию сравнения из переданного объекта comparator
+     * сортирует данные в поле data, используя реализацию сравнения из переданного объекта Comparator
      * @param comparator компаратор для сравнения элементов поля data
      */
     public void sort(Comparator<T> comparator) {
@@ -130,7 +130,29 @@ public class DataContainer <T> implements Iterable<T>{
     }
 
     /**
-     * сортирует элементы в переданном объекте DataContainer, используя реализацию сравнения, вызываемую у хранимых объектов
+     * сравнивает объект DataContainer <T> с другим объектом
+     * @param o объект, с которым сравнивается текущий объект
+     * @return true, если объекты равны, false, если объекты не равны
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DataContainer<?> that = (DataContainer<?>) o;
+        return Arrays.equals(data, that.data);
+    }
+
+    /**
+     * получает хэшкод объекта DataContainer <T> (на основе поля data)
+     * @return хэшкод объекта DataContainer <T> (на основе поля data)
+     */
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(data);
+    }
+
+    /**
+     * сортирует элементы в переданном объекте DataContainer<T>, используя реализацию сравнения, вызываемую у хранимых объектов
      * @param container объект DataContainer, элементы в котором необходимо отсортировать
      * @param <T> обобщенный тип параметра container, связанный с интерфейсом Comparable
      */
@@ -158,7 +180,7 @@ public class DataContainer <T> implements Iterable<T>{
     }
 
     /**
-     * сортирует элементы в переданном объекте DataContainer, используя реализацию сравнения из переданнгго объекта интерфейса Comparator
+     * сортирует элементы в переданном объекте DataContainer<T>, используя реализацию сравнения из переданнгго объекта интерфейса Comparator
      * @param container объект DataContainer, элементы которого необходимо отсортировать
      * @param comparator объекта интерфейса Comparator с реализацией сравнения
      * @param <T> обобщенный тип параметров container и comparator
