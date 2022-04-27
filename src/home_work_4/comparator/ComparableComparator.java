@@ -3,11 +3,11 @@ package home_work_4.comparator;
 import java.util.Comparator;
 
 /**
- * класс с реализацией интерфейса Comparator для String
+ * класс с реализацией интерфейса Comparator для T extends Comparable
  */
-public class StringComparator implements Comparator<String> {
+public class ComparableComparator<T extends Comparable<T>> implements Comparator<T> {
     @Override
-    public int compare(String o1, String o2) {
+    public int compare(T o1, T o2) {
         if(o1 == null && o2 == null) {
             return 0;
         }

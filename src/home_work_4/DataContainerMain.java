@@ -1,6 +1,6 @@
 package home_work_4;
 
-import home_work_4.comparator.StringComparator;
+import home_work_4.comparator.ComparableComparator;
 import home_work_4.pet.Pet;
 import home_work_4.pet.comparator.PetComparatorAge;
 import home_work_4.pet.comparator.PetComparatorName;
@@ -29,7 +29,7 @@ public class DataContainerMain {
 
         // задание 6, 9, 10
         System.out.println("Элементы до сортировки: " + Arrays.toString(container.getItems()));
-        container.sort(new StringComparator());
+        container.sort(new ComparableComparator<>());
         System.out.println("Элементы после сортировки: " + container);
 
         // вариант с передачей реализации Comparator без создания отдельного класса и с использованием более NPI-friendly версии
