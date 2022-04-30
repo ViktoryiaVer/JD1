@@ -38,7 +38,7 @@ public class StudentService {
         List<Student> filteredStudents = new ArrayList<>();
 
         for(Student student : students) {
-            if(student.getAge() >= age && student.getMark() >= mark) {
+            if(student.getAge() >= age && student.getMark() > mark) {
                 filteredStudents.add(student);
             }
         }
@@ -51,6 +51,9 @@ public class StudentService {
      * @return средний возраст типа int
      */
     public final int calculateAverageAge(List<Student> students) {
+        if(students.size() == 0) {
+            return 0;
+        }
         int sumAge = 0;
         int amount = students.size();
         for(Student student : students) {
