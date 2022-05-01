@@ -1,30 +1,21 @@
 package home_work_1;
 
-import java.util.Scanner;
 
-import static com.sun.tools.javac.util.StringUtils.toLowerCase;
+import home_work_1.api.ICommunicationPrinter;
 
-public class UserNameSwitch {
-    public static void main(String[] args) {
-        System.out.println("Введите Ваше имя:");
-        // Осуществляется и обрабатывается ввод чисел с клавиатуры
-        Scanner scanner = new Scanner(System.in);
-        String userName = scanner.nextLine();
-        userName = toLowerCase(userName); //так ввод становится регистронезависимым
+public class UserNameSwitch implements ICommunicationPrinter {
 
-        // обработка вариантов ввода
-        switch(userName) {
-            case "вася" : {
-                System.out.println("Привет!\nЯ тебя так долго ждал!");
-                break;
+    @Override
+    public String welcome(String name) {
+        switch(name) {
+            case "Вася" : {
+                return "Привет! Я тебя так долго ждал!";
             }
-            case "анастасия" : {
-                System.out.println("Я тебя так долго ждал!");
-                break;
+            case "Анастасия" : {
+                return "Я тебя так долго ждал!";
             }
             default : {
-                System.out.println("Добрый день, а Вы кто?");
-                break;
+                return "Добрый день, а Вы кто?";
             }
         }
     }

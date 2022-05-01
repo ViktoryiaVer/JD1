@@ -1,27 +1,17 @@
 package home_work_1;
 
+import java.util.Scanner;
+
 public class Sleep {
     public static void main(String[] args) {
-        boolean isWorkday = false;
-        boolean isHoliday = true;
+        Scanner console = new Scanner(System.in);
+        System.out.println("Сейчас рабочий день?");
+        boolean weekday = console.nextBoolean();
+        System.out.println("Сейчас у вас отпуск?");
+        boolean vacation = console.nextBoolean();
 
-        System.out.println("Можно ли Вам еще поспать?");
-
-        // обработка нелогичных ответов
-        if(isWorkday && isHoliday || !isWorkday && !isHoliday){
-            System.out.println("Что-то ответы у Вас непонятные. Идите отдохните и вернитесь позже!");
-        }
-        else {
-            // вызов метода sleepIn и присваивание возвращаемоего значения
-            boolean isSleepPossible = sleepIn(isWorkday, isHoliday);
-
-            // интерпретация значения метода
-            if(isSleepPossible) {
-                System.out.println("Да, можно еще и поспать!");
-            } else {
-                System.out.println("Ну нет, спать нельзя, пора на работу!");
-            }
-        }
+        boolean sleep = sleepIn(weekday, vacation);
+        System.out.println(answerToPrint(sleep));
     }
 
     public static boolean sleepIn(boolean weekday, boolean vacation) { // выполнение метода
@@ -30,5 +20,11 @@ public class Sleep {
         } else {
             return false;
         }
+    }
+    public static String answerToPrint(boolean sleep) {
+        if(sleep) {
+            return "Да, можно еще поспать!";
+        }
+        return "Ну нет, спать нельзя, пора на работу!";
     }
 }

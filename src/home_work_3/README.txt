@@ -17,3 +17,5 @@
     классы и интерфейсы в home_work_3/calcs/adapter, точка входа: home_work_3/runners/CalculatorWithAdapterMain.java
     2) попытка написать парсер на основе ОПЗ: пока без модуля, констант и проверок на валидность:
     home_work_3/calcs/additional/CalculatorStringExpression.java, home_work_3/runners/CalculatorStringExpressionMain.java
+
+13 - home_work_3/test: ICalculatorTest

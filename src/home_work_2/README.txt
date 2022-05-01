@@ -12,3 +12,8 @@
 3 - home_work_2/sorts/bubblesort.drawio, home_work_2/bubblesort.svg
 4.1 - home_work_2/utils/SortsUtils
 4.2 - home_work_2/sorts/SortsMain
+
+5 - home_work_2/test/loops: FactorialOnlyCycleTest, FactorialRecursionTest, MultiplyDigitsArgsTest, PowerNumbersTest, TypeOverflowTest
+6 - home_work_2/test/arrays: DoWhileOperationTest, ForEachOperationTest, ForOperationTest, WhileOperationTest
+7 - home_work_2/test/arrays: ArrayTasksTest
+8 - home_work_2/test/utils: SortsUtilsTest

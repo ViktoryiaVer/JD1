@@ -3,32 +3,32 @@ package home_work_2.arrays;
  * класс для реализации интерфейса ArraysOperation при помощи for
  */
 public class ForOperation implements IArraysOperation {
+
+    private StringBuilder sb = new StringBuilder();
+
     @Override
-    public void printAllArrayElements(int[] arr) {
-        System.out.println("Вывод всех элементов массива при помощи for:");
+    public String printAllArrayElements(int[] arr) {
         for(int i = 0; i < arr.length; i++) {
-            System.out.printf("%-5d", arr[i]);
+            sb = i< arr.length - 1 ? sb.append(arr[i]).append(" ") : sb.append(arr[i]);
         }
-        System.out.println();
+        return String.valueOf(sb);
     }
 
     @Override
-    public void printEverySecondElement(int[] arr) {
-        System.out.println("Вывод каждого второго элемента массива при помщи for:");
+    public String printEverySecondElement(int[] arr) {
         for(int i = 0; i< arr.length; i++) {
             if(i % 2 != 0) {
-                System.out.printf("%-5d", arr[i]);
+                sb = i< arr.length - 1 ? sb.append(arr[i]).append(" ") : sb.append(arr[i]);
             }
         }
-        System.out.println();
+        return String.valueOf(sb);
     }
 
     @Override
-    public void printElementsInReversedOrder(int[] arr) {
-        System.out.println("Вывод всех элементов массива в обратном порядке при помощи for:");
+    public String printElementsInReversedOrder(int[] arr) {
         for(int i = arr.length - 1; i >= 0 ; i--) {
-            System.out.printf("%-5d", arr[i]);
+            sb = i< arr.length - 1 ? sb.append(arr[i]).append(" ") : sb.append(arr[i]);
         }
-        System.out.println();
+        return String.valueOf(sb);
     }
 }

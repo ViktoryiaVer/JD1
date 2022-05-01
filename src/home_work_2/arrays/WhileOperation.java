@@ -3,38 +3,38 @@ package home_work_2.arrays;
  * класс для реализации интерфейса ArraysOperation при помощи while
  */
 public class WhileOperation implements IArraysOperation {
+
+    private StringBuilder sb = new StringBuilder();
+
     @Override
-    public void printAllArrayElements(int[] arr) {
-        System.out.println("Вывод всех элементов массива при помщи while:");
+    public String printAllArrayElements(int[] arr) {
         int i = 0;
         while(i < arr.length) {
-            System.out.printf("%-5d", arr[i]);
+            sb = i< arr.length - 1 ? sb.append(arr[i]).append(" ") : sb.append(arr[i]);
             i++;
         }
-        System.out.println();
+        return String.valueOf(sb);
     }
 
     @Override
-    public void printEverySecondElement(int[] arr) {
-        System.out.println("Вывод каждого второго элемента массива при помщи while:");
+    public String printEverySecondElement(int[] arr) {
         int i = 0;
         while(i < arr.length) {
             if(i % 2 != 0) {
-                System.out.printf("%-5d", arr[i]);
+                sb = i< arr.length - 1 ? sb.append(arr[i]).append(" ") : sb.append(arr[i]);
             }
             i++;
         }
-        System.out.println();
+        return String.valueOf(sb);
     }
 
     @Override
-    public void printElementsInReversedOrder(int[] arr) {
-        System.out.println("Вывод всех элементов массива в обратном порядке при помощи while:");
+    public String printElementsInReversedOrder(int[] arr) {
         int i = arr.length - 1;
         while(i>=0) {
-            System.out.printf("%-5d", arr[i]);
+            sb = i < arr.length - 1 ? sb.append(arr[i]).append(" ") : sb.append(arr[i]);
             i--;
         }
-        System.out.println();
+        return String.valueOf(sb);
     }
 }

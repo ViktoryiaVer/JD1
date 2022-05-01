@@ -5,22 +5,23 @@ package home_work_2.loops;
  */
 
 public class MultiplyDigitsArgs {
-    public static void main(String[] args) {
-        String enteredData = args[0];
 
-        // обработка дробного числа и не числа: дальнейшие расчеты производятся, только если введено целое число
-        if(isDouble(enteredData)) {
-            System.out.println("Ошибка! Вы ввели не целое число.");
-            return;
+    /**
+     * обрабатывает переданную строку:
+     * если число не целое - возвращает соответствующее сообщение;
+     * если передано не число - возвращает соответствующее сообщение;
+     * умножает цифры введенного числа и возвращает результат вместе с отраженным ходом вычисления
+     * @param input строка, которую необходимо обработать
+     * @return результат в виде строки
+     */
+    public static String process(String input) {
+        if(isDouble(input)) {
+            return "Введено не целое число";
         }
-        if(isText(enteredData)) {
-            System.out.println("Ошибка! Вы ввели не число!");
-            return;
+        if(isText(input)) {
+            return "Введено не число";
         }
-        int result = multiplyDigits(enteredData); // вызов метода для умножения цифр числа и возвращение значения
-
-        System.out.println(showMultiplicationAsString(enteredData) + " = " + result); // печать хода решения  в виде отформатированной строки вместе с результатом
-
+        return showMultiplicationAsString(input);
     }
 
     /**
@@ -59,7 +60,6 @@ public class MultiplyDigitsArgs {
      */
     public static int multiplyDigits(String str) {
         char[] chars = str.toCharArray();
-
         int result = 1;
         for (char c : chars) {
             result *= Character.digit(c, 10);
@@ -83,8 +83,9 @@ public class MultiplyDigitsArgs {
                 multResult.append(" * ");
             }
         }
+        String result = String.valueOf(multiplyDigits(str));
 
-        return multResult.toString();
+        return multResult +  " = "  + result;
     }
 
 }

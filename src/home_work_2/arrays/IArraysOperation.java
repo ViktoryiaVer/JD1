@@ -8,17 +8,17 @@ public interface IArraysOperation {
      * печатает все элементы массива
      * @param arr массив чисел, элементы которого нужно распечатать
      */
-    void printAllArrayElements(int[] arr);
+    String printAllArrayElements(int[] arr);
 
     /**
      * печатает каждый второй элемент массива
      * @param arr массив чисел, каждый второй элемент которого нужно распечатать
      */
-    void printEverySecondElement(int [] arr);
+    String printEverySecondElement(int [] arr);
 
     /**
      * печатает все элементы массива в обратном порядке
      * @param arr массив чисел, элементы которого нужно распечатать
      */
-    void printElementsInReversedOrder(int [] arr);
+    String printElementsInReversedOrder(int [] arr);
 }

@@ -69,8 +69,11 @@ public class ArrayTasks {
      */
 
     public static int findMaxElementWithEvenIndex (int [] array) {
-        int max = 0;
-        for(int i =0; i< array.length; i++) {
+        if(array.length == 0) {
+            return 0;
+        }
+        int max = array[0];
+        for(int i = 0; i< array.length; i++) {
             max = i % 2 == 0 && array[i] > max ? array[i] : max;
         }
         return max;
@@ -111,6 +114,10 @@ public class ArrayTasks {
      * @return 2 минимальных элемента в виде объекта класса MinElements
      */
     public static MinElements findTwoMinElements (int [] array) {
+        if(array.length == 0) {
+            return null;
+        }
+
         int min1 = array[0] < array[1] ? array[0] : array[1];
         int min2 = min1 == array[0] ? array[1] : array[0];
 

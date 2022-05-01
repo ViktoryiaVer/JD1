@@ -1,38 +1,47 @@
 package home_work_2.loops;
-import java.util.Scanner;
 /**
  * в классе находится решение задания 1.3 - возведение одного числа в степень второго, которые вводятся пользователем
  */
+
 public class PowerNumbers {
-    public static void main(String[] args) {
 
-        Scanner question1 = new Scanner(System.in);
-        System.out.println("Введите положительное или отрицательное дробное число:");
-
-        // цикл, в котором проверяется корректность ввода первого числа, и который продолжается до тех пор, пока ввод не будет правильным
-        while(!question1.hasNext("-*\\d+[.,]\\d+")) {
-            System.out.println("Вы ввели целое число! Введите дробное число.");
-            question1.next();
-        }
-        double firstNumber = question1.nextDouble(); // присваиваем корректно введенное число переменной
-
-        Scanner question2 = new Scanner(System.in);
-        System.out.println("Введите положительное целое число:");
-
-        // цикл, в котором проверяется корректность ввода первого числа, и который продолжается до тех пор, пока ввод не будет правильным
-        while((question2.hasNext("\\d+[.,]\\d+")) || (question2.hasNext("-\\d+"))) {
-            System.out.println("Проверьте ввод! Число должно быть целым и положительным!");
-            question2.next();
-        }
-        int secondNumber = question2.nextInt(); // присваиваем корректно введенное число переменной
-
-        // цикл, в котором выполняется возведение первого числа в степень второго
-        double powResult = 1;
-        for(int i = 1; i <= secondNumber; i++) {
-            powResult *= firstNumber;
-        }
-        // печать результата в отформатированном виде
-        System.out.printf("%.1f ^ %d = %.1f%n",firstNumber,secondNumber, powResult);
-
+    /**
+     * проверяет, введено ли положительное или отрицательное дробное число
+     * @param str строка, которую необходимо проверить
+     * @return true, если введено дробное число, false, если введено не дробное число
+     */
+    public static boolean isDoubleEntered(String str) {
+        return str.matches("-*\\d+[.,]\\d+");
     }
+
+    /**
+     * проверяет, введено ли положительное целое число
+     * @param str строка, которую необходимо проверить
+     * @return true, если введено положительное целое число, false, если введено не целое положительное число
+     */
+    public static boolean isPositiveIntegerEntered(String str) {
+        if("0".equals(str)) {
+            return false;
+        }
+        return str.matches("\\d+");
+    }
+
+    /**
+     * возводит положительное или отрицательное дробное число в степень целого положительного числа
+     * @param first положительное или отрицательное дробное число, которое необходимо возвести в степень
+     * @param second целое положительное числа, в степень которого необходимо возвести
+     * @return результат возведения в степень типа double
+     */
+    public static double powNumber(double first, int second) {
+        if(first == 0) {
+            return 0;
+        }
+        double powResult = 1;
+        for(int i = 1; i <= second; i++) {
+            powResult *= first;
+        }
+        return powResult;
+    }
+
+
 }

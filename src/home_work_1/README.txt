@@ -12,3 +12,5 @@
 7 - BinaryNumbersArrayBitwiseOperator - самый нормальный вариант: добавление 1 происходит при использовании побитового оператора NOT, вариант без костыля
 BinaryNumbersArray - добавление 1 для обработки отрицательных чисел происходит при помощи цикла, есть один костыль
 BinaryNumbersArrayListInteractively - вместо обычного массива в решении используется ArrayList, а также осуществляется ввод с клавиатуры
+8 - home_work_1/api/ICommunicationPrinter
+9 - home_work_1/test: SleepTest, UserNameIfTest, UserNameIfElseIfTest, UserNameSwitchTest, PhoneNumberTest, BinaryNumbersTest
