@@ -10,12 +10,7 @@ public class ComparatorByMark implements Comparator<Student> {
 
     @Override
     public int compare(Student o1, Student o2) {
-        if(o2.getMark()> o1.getMark())
-            return 1;
-        else if(o2.getMark()< o1.getAge())
-            return -1;
-        else
-            return 0;
+        return Double.compare(o1.getMark(), o2.getMark());
     }
 
 }

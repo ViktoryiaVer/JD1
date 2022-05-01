@@ -13,18 +13,18 @@ public class StudentMain {
 
         List<Student> filteredStudents = service.getFilteredAgeMark(students,12,8);
 
-        int average = service.calculateAverageAge(filteredStudents);
+        double average = service.calculateAverageAge(filteredStudents);
         System.out.println("Средний возраст студентов от 12 лет с оценкой выше 8: " + average);
 
         filteredStudents.sort(new ComparatorByName<>());
         System.out.println("Топ-10 студентов по имени: ");
         service.printTop(filteredStudents, 10);
 
-        filteredStudents.sort(new ComparatorByMark());
+        filteredStudents.sort(new ComparatorByMark().reversed());
         System.out.println("Топ-10 студентов по оценке: ");
         service.printTop(filteredStudents, 10);
 
-        filteredStudents.sort(new CompareByAge().thenComparing(new ComparatorByMark()));
+        filteredStudents.sort(new CompareByAge().thenComparing(new ComparatorByMark().reversed()));
         System.out.println("Топ-10 студентов по оценке в каждом возрасте:");
         service.printTopForAge(filteredStudents,10);
     }

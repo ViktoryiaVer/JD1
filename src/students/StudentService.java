@@ -50,7 +50,7 @@ public class StudentService {
      * @param students список объектов класса Student, средний возраст которых необходимо посчитать
      * @return средний возраст типа int
      */
-    public final int calculateAverageAge(List<Student> students) {
+    public final double calculateAverageAge(List<Student> students) {
         if(students.size() == 0) {
             return 0;
         }
@@ -59,7 +59,7 @@ public class StudentService {
         for(Student student : students) {
             sumAge+= student.getAge();
         }
-        return sumAge/amount;
+        return (double) sumAge/amount;
     }
 
     /**

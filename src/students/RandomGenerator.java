@@ -14,8 +14,8 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class RandomGenerator {
     private final ThreadLocalRandom random = ThreadLocalRandom.current();
-    private String[] namesStringArray = {"Петя", "Аня", "Вася", "Соня",
-            "Ира", "Паша", "Люся", "Катя", "Тимофей", "Илья", "Ярослав", "Маша",};
+    private static final String[] namesStringArray = {"Петя", "Аня", "Вася", "Соня",
+            "Ира", "Паша", "Люся", "Катя", "Тимофей", "Илья", "Ярослав", "Маша"};
 
     /**
      * получает рандомное целое число от 7 до 17 включительно
@@ -35,9 +35,7 @@ public class RandomGenerator {
         int targetStringLength = random.nextInt(3,10);
         StringBuilder buffer = new StringBuilder(targetStringLength);
         for (int i = 0; i < targetStringLength; i++) {
-            int randomLimitedInt = leftLimit + (int)
-                    (random.nextFloat() * (rightLimit - leftLimit + 1));
-            buffer.append((char) randomLimitedInt);
+            buffer.append((char)random.nextInt(leftLimit,rightLimit));
         }
         return buffer.toString();
     }
