@@ -46,7 +46,7 @@ public class FileMain {
             } while ("1".equals(answer));
         } while(!"3".equals(answer));
 
-        service.writeResultsInFile(String.valueOf(sb),pathFromUser);
+        service.writeResultsInFile(String.valueOf(sb));
 
     }
 

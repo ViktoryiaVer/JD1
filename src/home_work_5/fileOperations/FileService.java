@@ -52,10 +52,9 @@ public class FileService {
     /**
      * записывает результаты поисков в файл
      * @param str результаты поисков в виде String
-     * @param pathFromUser путь в папку пользователя типа String
      */
-    public void writeResultsInFile(String str, String pathFromUser) {
-        String pathForResults = pathFromUser + "\\result.txt";
+    public void writeResultsInFile(String str) {
+        String pathForResults = "D:\\Computer Science\\Java_Basics\\JD1\\HomeWork\\src\\home_work_5\\resources\\result.txt";
         try (FileWriter fileWriter = new FileWriter(pathForResults)) {
             try {
                 fileWriter.write(str);

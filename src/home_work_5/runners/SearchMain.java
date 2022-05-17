@@ -14,7 +14,7 @@ import home_work_5.textOperations.supplier.StringFromFileSupplier;
 
 public class SearchMain {
     public static void main(String[] args) {
-        String path = "D:\\Computer Science\\Java_Basics\\JD1\\HomeWork\\src\\home_work_5\\resources\\watAndPeace\\Война и мир_книга.txt";
+        String path = "D:\\Computer Science\\Java_Basics\\JD1\\HomeWork\\src\\home_work_5\\resources\\warAndPeace\\Война и мир_книга.txt";
         String stringFromFile = new StringFromFileSupplier(path).get();
 
         String word1 = "война";
