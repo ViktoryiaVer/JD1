@@ -42,7 +42,7 @@ public class TextHandler implements IStringHandler {
     }
 
     /**
-     * формирует для печати ТОПа
+     * формирует ТОП для печати
      * @param entryList список типа List<Map.Entry<String,Integer>>, позиции которого необходимо вернуть для печати
      * @param count количество позиций типа int для ТОПа
      * @return ТОП для печати типа String
