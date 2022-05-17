@@ -1,16 +1,20 @@
 package home_work_5.searchEngines;
 
 import home_work_5.searchEngines.api.ISearchEngine;
-import home_work_5.supplier.FormattedStringSupplier;
 
-import java.util.function.Supplier;
-
+/**
+ * класс с реализацией интерфейса ISearchEngine: поиск осуществляется при помощи метода indexOf
+ */
 public class EasySearch implements ISearchEngine {
 
+    /**
+     * осуществляет поиск при помощи метода indexOf
+     * @param text текст типа String, в котором необходимо найти слово
+     * @param word слово типа String, которое необходимо найти
+     * @return количество совпадений типа long
+     */
     @Override
     public long search(String text, String word) {
-        //Supplier<String> supplier = new FormattedStringSupplier(text);
-        //text = supplier.get();
 
         int index = 0;
         long count = 0;
@@ -22,7 +26,7 @@ public class EasySearch implements ISearchEngine {
                 char next = index + word.length() >= text.length()-1 ?  0 : text.charAt(index + word.length());
                 char last = index != 0? text.charAt(index-1) : 0;
 
-                if((!isWordSymbol(next) || next == 0) && ((!isWordSymbol(last) || last == 0))) {
+                if((isNonWordSymbol(next) || next == 0) && ((isNonWordSymbol(last) || last == 0))) {
                     count++;
                 }
 
@@ -33,7 +37,12 @@ public class EasySearch implements ISearchEngine {
         return count;
     }
 
-    public static boolean isWordSymbol(char ch) {
-        return Character.isLetterOrDigit(ch) || ch == '-';
+    /**
+     * проверяет, является ли символ несловным
+     * @param ch символ типа сhar, который необходимо проверить
+     * @return true, если символ является несловным, false, если символ буква или цифра
+     */
+    private static boolean isNonWordSymbol(char ch) {
+        return !Character.isLetterOrDigit(ch) && ch != '-';
     }
 }

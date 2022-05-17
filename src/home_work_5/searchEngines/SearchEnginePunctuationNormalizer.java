@@ -1,8 +1,9 @@
 package home_work_5.searchEngines;
 
 import home_work_5.searchEngines.api.ISearchEngine;
+import home_work_5.textOperations.api.IStringHandler;
 
-public class SearchEnginePunctuationNormalizer implements ISearchEngine  {
+public class SearchEnginePunctuationNormalizer implements ISearchEngine, IStringHandler {
     private final ISearchEngine searchEngine;
 
     public SearchEnginePunctuationNormalizer(ISearchEngine searchEngine) {
@@ -13,16 +14,15 @@ public class SearchEnginePunctuationNormalizer implements ISearchEngine  {
         return searchEngine;
     }
 
+    /**
+     * осуществляет поиск слова в тексте, при этом из строки удаляются знаки препинания и лишние пробельные знаки
+     * @param text текст типа String, в котором необходимо найти слово
+     * @param word слово типа String, которое необходимо найти
+     * @return количество совпадений типа long
+     */
     @Override
     public long search(String text, String word) {
-        text = normalizePunctuationInString(text);
-        return searchEngine.search(text,word);
-    }
-
-    private String normalizePunctuationInString(String str) {
-        String punctuation = "-\\s+|\\s+-|--|_|[^\\wа-яА-ЯЁё-]";
-        String temp = str.replaceAll(punctuation," ");
-        temp = temp.replaceAll("\\s{2,}", " ");
-        return temp.trim();
+        text = deletePunctuationAndExtraWhitespaces(text);
+        return searchEngine.search(text, word);
     }
 }
