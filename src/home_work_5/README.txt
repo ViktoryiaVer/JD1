@@ -6,8 +6,9 @@
                                core: классы MapHandler, SetStringHandler, TextHandler
 пакет runners: класс с точкой входа TextHandlerMain
 
-4.1-4.5 пакет searchEngines:   api: интерфейс ISearchEngine
-                               классы EasySearch, RegExSearch, SearchEnginePunctuationNormalizer, SearchEngineCaseInsensitive,
+3. пакет searchEngines:        api: интерфейс ISearchEngine
+
+4.1-4.5 пакет searchEngines:   классы EasySearch, RegExSearch, SearchEnginePunctuationNormalizer, SearchEngineCaseInsensitive,
                                SearchEngineCaseNormalizer
 
 5. пакет runners: класс с точкой входа SearchMain
