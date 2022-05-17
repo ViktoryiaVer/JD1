@@ -92,5 +92,4 @@ public class FileMain {
         System.out.println("Выберите действие: 1 - ввести слово для поиска; 2 - вернуться к выбору файла; 3 - выйти");
         return console.nextLine();
     }
-
 }

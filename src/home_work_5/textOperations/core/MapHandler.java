@@ -34,7 +34,7 @@ public class MapHandler implements ICollectionHandler {
         while(m.find()) {
             String word = m.group(2);
             this.stringIntegerMap.putIfAbsent(word, 0);
-            this.stringIntegerMap.put(word,this.stringIntegerMap.get(word)+1);
+            this.stringIntegerMap.put(word, this.stringIntegerMap.get(word)+1);
         }
     }
 

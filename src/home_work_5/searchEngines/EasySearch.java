@@ -33,7 +33,6 @@ public class EasySearch implements ISearchEngine {
                 index += word.length()+1;
             }
         }
-
         return count;
     }
 

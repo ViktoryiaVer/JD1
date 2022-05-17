@@ -47,7 +47,7 @@ public class TextHandler implements IStringHandler {
      * @param count количество позиций типа int для ТОПа
      * @return ТОП для печати типа String
      */
-    private static String topToPrint(List<Map.Entry<String,Integer>> entryList, int count) {
+    private String topToPrint(List<Map.Entry<String, Integer>> entryList, int count) {
         StringBuilder sb = new StringBuilder();
 
         for (Map.Entry<String, Integer> entry : entryList) {
