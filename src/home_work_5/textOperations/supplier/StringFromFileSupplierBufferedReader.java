@@ -27,7 +27,7 @@ public class StringFromFileSupplierBufferedReader implements Supplier<String> {
         try(BufferedReader reader = new BufferedReader(new FileReader(path))){
             String str;
             while((str = reader.readLine()) != null){
-                builder.append(str);
+                builder.append(str).append("\n");
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден!");
