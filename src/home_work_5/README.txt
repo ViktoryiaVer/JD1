@@ -2,7 +2,7 @@
 
 2.1-2.2. пакет textOperations: api: интерфейсы ICollectionHandler, IStringHandler
                                comparator: классы ListComparatorByKey, ListComparatorByValue
-                               supplier: класс StringFromFileSupplier
+                               supplier: класс StringFromFileSupplier, StringFromFileSupplierBufferedReader
                                core: классы MapHandler, SetStringHandler, TextHandler
 пакет runners: класс с точкой входа TextHandlerMain
 
