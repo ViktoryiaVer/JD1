@@ -59,9 +59,9 @@ public class SongService {
                     }
                 }
             }
-            if(!wasFound) {
-                throw new IllegalArgumentException("Песни с таким названием у нас нет. Проверьте ввод");
-            }
+        }
+        if(!wasFound) {
+            throw new IllegalArgumentException("Песни с таким названием у нас нет. Проверьте ввод");
         }
         return recommended;
     }
