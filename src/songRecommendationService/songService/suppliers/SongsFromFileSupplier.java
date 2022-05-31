@@ -20,7 +20,6 @@ public class SongsFromFileSupplier implements Supplier<List<Song>> {
     @Override
     public List<Song> get() {
         List<String> strings = new ArrayList<>();
-        List<Song> songs = new ArrayList<>();
         try(BufferedReader reader = new BufferedReader(new FileReader(path))){
             String str;
             while((str = reader.readLine()) != null){

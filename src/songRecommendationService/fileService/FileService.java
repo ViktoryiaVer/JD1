@@ -4,7 +4,6 @@ import songRecommendationService.songService.dto.PlayList;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class FileService {
     private final String path;
@@ -18,7 +17,6 @@ public class FileService {
     }
 
     public void writePlayListInFile(PlayList playList) {
-        Scanner console = new Scanner(System.in);
         String filePath = this.path + "\\playlist.txt";
         try (FileWriter fileWriter = new FileWriter(filePath)) {
             try {
@@ -30,5 +28,4 @@ public class FileService {
             System.out.println("Ошибка при создании файла: " + ex.getMessage());
         }
     }
-
 }
